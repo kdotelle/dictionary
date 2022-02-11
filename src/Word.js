@@ -30,16 +30,28 @@ function Word() {
       });
   };
   return (
-    <div className="word">
-      <h1>{word}</h1>
-      {definition && (
-        <p>
-          {partOfSpeech}: {definition}
-        </p>
-      )}
-      <Button color="secondary" onClick={getWord}>
-        Get Word
-      </Button>
+    <div className="container">
+      <div className="row word">
+        <div className="col-sm-6">
+          <h1>{word}</h1>
+          {definition && (
+            <p>
+              {partOfSpeech}: {definition}
+            </p>
+          )}
+        </div>
+        <div className="col-sm-6">
+          <Button
+            block
+            size="lg"
+            color="secondary"
+            onClick={getWord}
+            className="button"
+          >
+            Get Word
+          </Button>
+        </div>
+      </div>
     </div>
   );
 }

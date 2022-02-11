@@ -1,3 +1,11 @@
 h1 {
   font-size: 64px;
 }
+
+.word {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+}
