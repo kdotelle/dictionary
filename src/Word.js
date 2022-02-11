@@ -11,13 +11,13 @@ function Word() {
 
   const options = {
     method: "GET",
-    url: "https://wordsapiv1.p.rapidapi.com/words/incredible/definitions",
+    url: `https://wordsapiv1.p.rapidapi.com/words/incredible/definitions`,
     headers: {
       "x-rapidapi-host": "wordsapiv1.p.rapidapi.com",
-      "x-rapidapi-key": { API_KEY },
+      "x-rapidapi-key": `${API_KEY}`,
     },
   };
-  const getWord = () => {
+  const getDefinition = () => {
     axios
       .request(options)
       .then(function (response) {
@@ -37,7 +37,7 @@ function Word() {
     params: { random: "true" },
     headers: {
       "x-rapidapi-host": "wordsapiv1.p.rapidapi.com",
-      "x-rapidapi-key": { API_KEY },
+      "x-rapidapi-key": `${API_KEY}`,
     },
   };
 
@@ -47,9 +47,15 @@ function Word() {
       .then(function (response) {
         console.log(response.data);
         console.log(response.data.word);
-        // setWord(response.data.word);
-        // setDefinition(response.data.definitions[0].definition);
-        // setPartOfSpeech(response.data.definitions[0].partOfSpeech);
+        setWord(response.data.word);
+
+        response.data.results
+          ? setDefinition(response.data.results[0].definition)
+          : setDefinition(null);
+        //setPartOfSpeech(response.data.definitions[0].partOfSpeech);
+        response.data.results
+          ? setPartOfSpeech(response.data.results[0].partOfSpeech)
+          : setPartOfSpeech();
       })
       .catch(function (error) {
         console.error(error);
@@ -74,13 +80,13 @@ function Word() {
             onClick={getRandom}
             className="button"
           >
-            Get Word
+            Get Random Word
           </Button>
           <Button
             block
             size="lg"
             color="primary"
-            onClick={getWord}
+            onClick={getDefinition}
             className="button"
           >
             Incredible
