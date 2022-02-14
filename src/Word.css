@@ -3,6 +3,10 @@ h1 {
   font-family: "Open Sans", sans-serif;
 }
 
+.definition {
+  font-size: 20px;
+}
+
 .word {
   display: flex;
   flex-direction: column;

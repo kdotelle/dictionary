@@ -64,7 +64,7 @@ function Word() {
   return (
     <div className="container">
       <div className="row word">
-        <div className="col-sm-6">
+        <div className="col-sm-6 definition">
           <h1>{word}</h1>
           {partOfSpeech && (
             <p>
