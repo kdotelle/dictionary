@@ -1,7 +1,4 @@
 .App {
-  border-color: black;
-  border: 2px;
-  border-style: solid;
   text-align: center;
   color: black;
   display: flex;
@@ -13,4 +10,7 @@
 
 .App-header {
   font-size: 64px;
+  text-shadow: 2px 2px 5px gray;
+  font-family: "Indie Flower", cursive;
+  position: sticky;
 }

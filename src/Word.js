@@ -66,11 +66,12 @@ function Word() {
       <div className="row word">
         <div className="col-sm-6">
           <h1>{word}</h1>
-          {definition && (
+          {partOfSpeech && (
             <p>
-              {partOfSpeech}: {definition}
+              <em>{partOfSpeech}</em>
             </p>
           )}
+          {definition && <p>{definition}</p>}
         </div>
         <div className="col-sm-6">
           <Button
