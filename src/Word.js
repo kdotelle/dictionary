@@ -4,6 +4,9 @@ import { Button } from "reactstrap";
 import { API_KEY } from "./key.js";
 import "./Word.css";
 
+//create conditional to only display a word if it has a definition
+//add search
+
 function Word() {
   const [word, setWord] = useState("Word");
   const [definition, setDefinition] = useState(null);
@@ -34,7 +37,7 @@ function Word() {
   const random = {
     method: "GET",
     url: "https://wordsapiv1.p.rapidapi.com/words/",
-    params: { random: "true" },
+    params: { random: "true", hasDetails: "definitions" },
     headers: {
       "x-rapidapi-host": "wordsapiv1.p.rapidapi.com",
       "x-rapidapi-key": `${API_KEY}`,
